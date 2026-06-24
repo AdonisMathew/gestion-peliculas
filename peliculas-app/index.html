@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Películas</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Gestión de Películas</h1>
+
+      <section id="seccion-generos">
+        <h2>Géneros</h2>
+        <form id="genre-form">
+          <input type="text" id="genre-name" placeholder="Nombre del género" />
+          <button type="submit">Agregar Género</button>
+        </form>
+        <ul id="lista-generos"></ul>
+      </section>
+
+      <section id="seccion-peliculas">
+        <h2>Películas</h2>
+        <form id="movie-form">
+          <input type="text" id="movie-title" placeholder="Título" />
+          <input type="text" id="movie-director" placeholder="Director" />
+          <input type="number" id="movie-year" placeholder="Año" />
+          <input type="number" id="movie-duration" placeholder="Duración (minutos)" />
+          <select id="movie-genre">
+            <option value="">Seleccioná un género</option>
+          </select>
+          <input type="hidden" id="editing-id" value="" />
+          <button type="submit" id="btn-movie">Agregar Película</button>
+          <button type="button" id="btn-cancelar" style="display:none">Cancelar</button>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Director</th>
+              <th>Año</th>
+              <th>Duración</th>
+              <th>Género</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-peliculas"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <div id="mensaje"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
