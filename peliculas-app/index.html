@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app">
-      <h1>Gestión de Películas</h1>
+
+    <!-- Pantalla de autenticación -->
+    <div id="auth-screen">
+      <div class="auth-box">
+        <h1>Gestión de Películas</h1>
+
+        <div class="auth-tabs">
+          <button id="tab-login" class="tab-active">Iniciar sesión</button>
+          <button id="tab-register">Registrarse</button>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input type="password" id="login-password" placeholder="Contraseña" required />
+          <button type="submit">Ingresar</button>
+        </form>
+
+        <form id="register-form" class="auth-form" style="display:none">
+          <input type="text" id="register-name" placeholder="Nombre" required />
+          <input type="email" id="register-email" placeholder="Email" required />
+          <input type="password" id="register-password" placeholder="Contraseña (mínimo 6 caracteres)" required />
+          <button type="submit">Crear cuenta</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- App principal (oculta hasta iniciar sesión) -->
+    <div id="app" style="display:none">
+      <header class="app-header">
+        <h1>Gestión de Películas</h1>
+        <div class="user-info">
+          <span id="user-name-display"></span>
+          <button id="btn-logout">Cerrar sesión</button>
+        </div>
+      </header>
 
       <section id="seccion-generos">
         <h2>Géneros</h2>

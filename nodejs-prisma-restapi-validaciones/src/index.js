@@ -1,6 +1,7 @@
 import express from "express";
 import movieRoutes from "./routes/movies.routes.js";
 import genreRoutes from "./routes/genres.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 import cors from "cors";
 import { prisma } from "./db.js";
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use("/api", movieRoutes);
 app.use("/api", genreRoutes);
+app.use("/api", authRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);
